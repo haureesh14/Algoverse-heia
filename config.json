@@ -1,0 +1,42 @@
+{
+  "langs": {
+    "es": "Spanish",
+    "hi": "Hindi",
+    "zh": "Chinese (Simplified, Mandarin)",
+    "sw": "Swahili"
+  },
+  "models": {
+    "qwen3-8b": [
+      "Qwen/Qwen3-8B-FP8",
+      768
+    ],
+    "llama-3.1-8b": [
+      "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8",
+      768
+    ],
+    "qwen3-14b": [
+      "Qwen/Qwen3-14B-AWQ",
+      768
+    ],
+    "vicuna-7b-v1.5": [
+      "lmsys/vicuna-7b-v1.5",
+      768
+    ],
+    "gpt-oss-20b": [
+      "openai/gpt-oss-20b",
+      2048
+    ]
+  },
+  "translator_model": "gpt-5-mini",
+  "translator_effort": "medium",
+  "judge_model": "gpt-5-mini",
+  "api_workers": 16,
+  "run_nllb": true,
+  "nllb_model": "facebook/nllb-200-distilled-1.3B",
+  "nllb_sample": [
+    100,
+    50
+  ],
+  "use_legacy_spanish": true,
+  "hf_repo": "hershvs/multilingual-overrefusal"
+}
