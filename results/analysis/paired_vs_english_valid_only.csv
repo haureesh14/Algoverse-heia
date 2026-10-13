@@ -1,0 +1,6 @@
+model,lang,n,en,other,only_other_refused,only_en_refused,p
+llama-3.1-8b,es,249,0.088,0.044,5,16,0.0266
+qwen3-8b,es,249,0.04,0.024,4,8,0.3877
+qwen3-8b,hi,240,0.042,0.004,1,10,0.0117
+qwen3-8b,zh,248,0.04,0.02,3,8,0.2266
+qwen3-8b,sw,140,0.064,0.007,1,9,0.0215
