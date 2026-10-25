@@ -19,9 +19,13 @@ import os, re, sys, json, time, threading, concurrent.futures as cf
 import pandas as pd
 import requests
 
-GEN_DIR = "results/generations"
-OUT_DIR = "results/judged_no_english"
-CACHE_DIR = "results/judge_cache_no_english"
+# Folders can be changed with --in / --out (e.g. to judge the same-language regeneration):
+#   python3 rejudge_no_english/judge_no_english.py --in results/generations_same_language --out results/judged_same_language
+def _flag(name, default):
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
+GEN_DIR = _flag("--in", "results/generations")
+OUT_DIR = _flag("--out", "results/judged_no_english")
+CACHE_DIR = OUT_DIR.replace("judged", "judge_cache", 1) if "judged" in OUT_DIR else OUT_DIR + "_cache"
 CFG = json.load(open("pipeline/config.json"))
 JMODEL = CFG["judge_model"]                      # gpt-5-mini, same as the original run
 WORKERS = CFG["api_workers"]                     # 16 parallel requests, same as the original run
@@ -162,11 +166,12 @@ def main():
     if not os.path.isdir(GEN_DIR):
         sys.exit("Run this from the repo root (the folder that contains results/ and pipeline/).")
     os.makedirs(OUT_DIR, exist_ok=True); os.makedirs(CACHE_DIR, exist_ok=True)
-    only = sys.argv[1] if len(sys.argv) > 1 else None
+    args = [a for i, a in enumerate(sys.argv[1:], 1) if a not in ("--in", "--out") and sys.argv[i - 1] not in ("--in", "--out")]
+    only = args[0] if args else None
     files = sorted(f for f in os.listdir(GEN_DIR) if f.endswith(".csv"))
     if only:
         files = [f for f in files if f.startswith(only + "__")]
-    log(f"{len(files)} files to judge with {JMODEL} (prompt {PROMPT_VERSION}: English version NOT shown, everything else unchanged)")
+    log(f"{GEN_DIR} -> {OUT_DIR}: {len(files)} files to judge with {JMODEL} (prompt {PROMPT_VERSION}: English version NOT shown, everything else unchanged)")
     with cf.ThreadPoolExecutor(WORKERS) as ex:
         for f in files:
             judge_file(os.path.join(GEN_DIR, f), ex)
