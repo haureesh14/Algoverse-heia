@@ -1,0 +1,8 @@
+,original,original,original,original,original,same_language_prompt,same_language_prompt,same_language_prompt,same_language_prompt,same_language_prompt
+lang,en,es,zh,hi,sw,en,es,zh,hi,sw
+model,,,,,,,,,,
+gpt-oss-20b,99.1,87.5,65.3,56.8,68.4,99.1,100.0,100.0,99.8,97.4
+llama-3.1-8b,99.1,100.0,100.0,100.0,96.5,99.1,100.0,100.0,100.0,99.3
+qwen3-14b,99.3,100.0,99.8,100.0,96.7,99.1,100.0,100.0,100.0,98.6
+qwen3-8b,99.3,100.0,99.8,100.0,94.0,99.1,100.0,100.0,100.0,98.4
+vicuna-7b-v1.5,98.7,80.4,100.0,99.3,57.7,98.7,74.1,99.5,99.3,64.0

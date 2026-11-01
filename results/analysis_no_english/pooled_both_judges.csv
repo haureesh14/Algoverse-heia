@@ -1,0 +1,11 @@
+,,with_english,with_english,with_english,no_english,no_english,no_english
+,,b,c,p,b,c,p
+label,lang,,,,,,
+safe,es,30,47,0.0675,28,47,0.037
+safe,zh,42,48,0.5984,45,45,1.0
+safe,hi,31,60,0.0031,38,57,0.0642
+safe,sw,17,56,0.0,18,51,0.0001
+unsafe,es,35,142,0.0,38,108,0.0
+unsafe,zh,35,171,0.0,39,132,0.0
+unsafe,hi,24,244,0.0,21,201,0.0
+unsafe,sw,31,241,0.0,18,267,0.0

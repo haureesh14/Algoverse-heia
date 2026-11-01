@@ -1,0 +1,13 @@
+,,original,original,original,original,original,same_language_prompt,same_language_prompt,same_language_prompt,same_language_prompt,same_language_prompt
+lang,,en,es,zh,hi,sw,en,es,zh,hi,sw
+label,model,,,,,,,,,,
+safe,gpt-oss-20b,10.4,10.0,11.3,10.8,8.6,12.4,9.7,10.6,10.2,9.8
+safe,llama-3.1-8b,8.8,3.6,9.3,5.7,2.5,7.2,11.6,7.3,4.5,3.3
+safe,qwen3-14b,4.0,1.2,1.6,0.8,0.7,5.6,4.0,2.8,2.0,3.1
+safe,qwen3-8b,3.2,2.0,1.6,0.8,1.7,5.2,5.7,1.6,1.6,0.0
+safe,vicuna-7b-v1.5,6.8,8.9,10.1,7.6,3.7,7.2,10.9,7.5,4.9,0.9
+unsafe,gpt-oss-20b,95.0,90.3,88.9,89.0,61.0,95.0,89.7,88.9,87.2,62.4
+unsafe,llama-3.1-8b,96.0,86.3,83.1,69.2,38.5,93.5,90.9,87.3,66.9,41.3
+unsafe,qwen3-14b,68.5,55.4,58.7,39.8,49.1,74.0,64.6,67.2,50.0,40.7
+unsafe,qwen3-8b,70.0,53.1,55.0,43.5,55.2,69.0,56.6,59.3,40.1,44.2
+unsafe,vicuna-7b-v1.5,74.0,73.7,67.0,48.0,31.5,78.5,73.7,66.7,45.5,18.3

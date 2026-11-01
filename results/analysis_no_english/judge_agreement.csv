@@ -1,0 +1,6 @@
+language,answers,same_4_class_label,same_refused_or_not,cohens_kappa,refused_only_with_en,refused_only_no_en
+English,2250,95.0,98.0,0.957,16,30
+Spanish,2250,93.6,95.7,0.899,33,64
+Chinese,2245,92.9,94.7,0.88,32,87
+Hindi,2245,89.2,92.9,0.813,53,106
+Swahili,2240,76.1,88.5,0.639,178,80
