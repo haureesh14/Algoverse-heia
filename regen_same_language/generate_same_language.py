@@ -70,8 +70,12 @@ def generate_one_model(name):
     if not jobs:
         log(f"{name}: nothing to generate"); return
 
+    # Download only the files vLLM needs. Some repos (gpt-oss) also ship an extra full copy of the weights in
+    # original/ (13.8 GB) that would fill the disk; skip it, then load from the downloaded folder.
+    from huggingface_hub import snapshot_download
+    local = snapshot_download(model_id, ignore_patterns=["original/*", "metal/*"])
     from vllm import LLM, SamplingParams
-    llm = LLM(model=model_id, max_model_len=4096, gpu_memory_utilization=0.90, enforce_eager=True)
+    llm = LLM(model=local, max_model_len=4096, gpu_memory_utilization=0.90, enforce_eager=True)
     params = SamplingParams(temperature=0.0, max_tokens=max_tokens)
     extra = {"chat_template": VICUNA_TEMPLATE} if "vicuna" in model_id.lower() else {}
 
