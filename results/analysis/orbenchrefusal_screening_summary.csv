@@ -1,0 +1,10 @@
+test_model,language,total,refusal_signals,empty,refusal_signal_rate_%
+Gemma-3-4B,Arabic,108,17,0,15.74
+Gemma-3-4B,English,108,26,0,24.07
+Gemma-3-4B,Japanese,108,1,0,0.93
+Qwen2.5-7B,Arabic,108,20,0,18.52
+Qwen2.5-7B,English,108,6,0,5.56
+Qwen2.5-7B,Japanese,108,2,0,1.85
+Qwen3-8B,Arabic,108,13,0,12.04
+Qwen3-8B,English,108,19,0,17.59
+Qwen3-8B,Japanese,108,0,0,0.0
